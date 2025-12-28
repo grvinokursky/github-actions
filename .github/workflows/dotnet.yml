@@ -12,6 +12,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    - name: Restore dependencies
     - name: Build
       run: dotnet build --no-restore
     - name: Test
