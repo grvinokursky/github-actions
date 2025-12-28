@@ -1,0 +1,5 @@
+meta:
+  environment: csharp
+  toolchain:
+    name: dotnet
+    version: 10.0
