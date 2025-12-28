@@ -32,21 +32,21 @@ jobs:
     - name: Build
       run: dotnet build --no-restore
   
+  # Job для тестирования.
   test:
     runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v4
     
-    # Устанавливаем нужную версию .NET SDK 10.
     - name: Setup .NET
       uses: actions/setup-dotnet@v4
       with:
         dotnet-version: 10.0.x
-        
-    # Восстанавливаем NuGet‑пакеты перед сборкой.    
+          
     - name: Restore dependencies
       run: dotnet restore
-      
+    
+    # Запуск тестов.
     - name: Test
       run: dotnet test --verbosity normal  
