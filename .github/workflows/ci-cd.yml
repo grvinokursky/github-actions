@@ -15,4 +15,4 @@ jobs:
       publish-dir: ${{ steps.publish.outputs.publish-dir }}
     steps:
       - name: Build
-        run: dotnet publish ./BlazorApp.csproj -p:PublishProfile="browser-wasm"
+        run: dotnet publish ./BlazorApp/BlazorApp.csproj -p:PublishProfile="browser-wasm"
