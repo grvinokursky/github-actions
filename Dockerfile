@@ -1,5 +1,5 @@
 ﻿FROM nginx:stable-alpine3.19-slim
-COPY ./art/blazor-app/browser-wasm /app/bin/
+COPY ./art/browser-wasm /app/bin/
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 STOPSIGNAL SIGQUIT
 CMD ["nginx", "-g", "daemon off;"]

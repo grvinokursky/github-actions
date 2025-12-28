@@ -1,12 +1,9 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
-This file is used by the publish/package process of your Web project. You can customize the behavior of this process
-by editing this MSBuild file. In order to learn more about this please visit https://go.microsoft.com/fwlink/?LinkID=208121. 
--->
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- https://go.microsoft.com/fwlink/?LinkID=208121. -->
 <Project>
   <PropertyGroup>
-    <_PublishTargetUrl>C:\dev\learn-mifi\Основы-конвейерной-разработки\2-Настройка-CI-CD-в-Github-Actions\GithubActions\src\GithubActions.BlazorApp\../../art/blazor-app/browser-wasm</_PublishTargetUrl>
-    <History>False|2025-12-28T17:25:57.4608004Z||;False|2025-12-28T22:23:11.3432907+05:00||;False|2025-12-28T22:21:41.9160367+05:00||;False|2025-12-28T22:20:39.1671027+05:00||;True|2025-12-28T14:41:13.5608998+05:00||;True|2025-12-28T14:39:16.9391668+05:00||;</History>
+    <_PublishTargetUrl>C:\dev\learn-mifi\Основы-конвейерной-разработки\2-Настройка-CI-CD-в-Github-Actions\GithubActions\src\GithubActions.BlazorApp\..\..\art\browser-wasm\</_PublishTargetUrl>
+    <History>False|2025-12-28T19:45:13.0788062Z||;</History>
     <LastFailureDetails />
   </PropertyGroup>
 </Project>
