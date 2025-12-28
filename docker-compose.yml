@@ -1,0 +1,8 @@
+services:
+  blazor-app:
+    build:
+      dockerfile: Dockerfile
+    network_mode: bridge
+    restart: always
+    ports:
+      - "50851:80"
