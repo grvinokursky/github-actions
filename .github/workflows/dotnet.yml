@@ -9,7 +9,7 @@ on:
 
 jobs:
   # Один job, который собирает и тестирует проект.
-  build and test:
+  build:
 
     # Среда выполнения — виртуальная машина Ubuntu.
     runs-on: ubuntu-latest
