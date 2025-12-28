@@ -1,6 +1,6 @@
 name: .NET
 
-# Триггеры: при пуше или пулл реквестов в main
+# Триггеры: при пуше или пулл реквестов в main.
 on:
   push:
     branches: [ "main" ]
@@ -8,28 +8,45 @@ on:
     branches: [ "main" ]
 
 jobs:
-  build:
+  # Один job, который собирает и тестирует проект.
+  build and test:
+
+    # Среда выполнения — виртуальная машина Ubuntu.
+    runs-on: ubuntu-latest
+
+    steps:
+    # Получаем код репозитория (обязательный первый шаг).
+    - uses: actions/checkout@v4
+    
+    # Устанавливаем нужную версию .NET SDK 10.
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: 10.0.x
+        
+    # Восстанавливаем NuGet‑пакеты перед сборкой.    
+    - name: Restore dependencies
+      run: dotnet restore
+    
+    # Компиляция проекта.
+    - name: Build
+      run: dotnet build --no-restore
+  
+  test:
     runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v4
+    
+    # Устанавливаем нужную версию .NET SDK 10.
     - name: Setup .NET
       uses: actions/setup-dotnet@v4
       with:
         dotnet-version: 10.0.x
+        
+    # Восстанавливаем NuGet‑пакеты перед сборкой.    
     - name: Restore dependencies
       run: dotnet restore
-    - name: Build
-      run: dotnet build --no-restore
-  test:
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
-    - uses: actions/checkout@v4
-    - name: Setup .NET
-      uses: actions/setup-dotnet@v4
-      with:
-        dotnet-version: 10.0.x
+      
     - name: Test
-      run: dotnet test --no-build --verbosity normal
-    
+      run: dotnet test --verbosity normal  
