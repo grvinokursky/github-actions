@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="src/GithubActions.BlazorApp/GithubActions.BlazorApp.csproj" Id="5c8bfe6f-87a3-4ba6-bd83-73b671684043" />
+  <Project Path="src/GithubActions.Service/GithubActions.Service.csproj" Id="4b98528b-528f-4836-9400-da04bb6c9732" />
+  <Project Path="src/GithubActions.Tests/GithubActions.Tests.csproj" Id="9ed26abb-af8e-4d2a-91ee-0e781d549a78" />
+</Solution>
