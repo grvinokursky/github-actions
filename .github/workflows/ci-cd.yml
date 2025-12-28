@@ -28,4 +28,4 @@ jobs:
             nuget-${{ runner.os }}-
     
       - name: Build
-        run: dotnet build --no-restore -c Release
+        run: dotnet build ./src/GithubActions.BlazorApp/GithubActions.BlazorApp.csproj --no-restore -c Release
