@@ -15,4 +15,6 @@ jobs:
       publish-dir: ${{ steps.publish.outputs.publish-dir }}
     steps:
       - name: Build
-        run: dotnet build --no-restore -c Release
+        run: 
+          cd ./BlazorApp dotnet 
+          build --no-restore -c Release
