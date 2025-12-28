@@ -1,0 +1,23 @@
+name: CI / CD
+
+on:
+  push:
+    branches: [ main ]
+  pull<i>request:
+    branches: [ main ]
+
+permissions:
+  contents: read
+
+jobs:
+  build-and-test:
+    name: Build & Test (.NET 10)
+    runs-on: ubuntu-latest
+    outputs:
+      publish-dir: ${{ steps.publish.outputs.publish-dir }}
+    steps:
+      - name: Build
+        run: dotnet publish ./BlazorApp.csproj -p:PublishProfile="browser-wasm"
+
+      - name: Test
+        run: - dotnet test --configuration Release
