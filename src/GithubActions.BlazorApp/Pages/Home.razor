@@ -1,0 +1,21 @@
+﻿@page "/"
+@using GithubActions.Service
+
+<PageTitle>Home</PageTitle>
+
+<h1>Hello, grvinokursky!</h1>
+
+<p role="status">Current count: @_currentCount</p>
+
+<button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
+
+@code {
+    private readonly MathService _mathService = new MathService();
+
+    private int _currentCount;
+
+    private void IncrementCount()
+    {
+        _currentCount = _mathService.Increase(_currentCount);
+    }
+}
