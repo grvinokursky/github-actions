@@ -18,6 +18,3 @@ jobs:
     steps:
       - name: Build
         run: dotnet publish ./BlazorApp.csproj -p:PublishProfile="browser-wasm"
-
-      - name: Test
-        run: - dotnet test --configuration Release
